@@ -1,0 +1,90 @@
+# https://microchipdeveloper.com/faq:72
+# http://ww1.microchip.com/downloads/en/devicedoc/50002027d.pdf
+
+# Ignore uncrustify backups
+*.unc*
+doc/html/*
+doc/output/*
+doc/tag/*
+doxygen_warnings.txt
+/.metadata/
+*.o
+*.d
+*.elf
+*.hex
+!/vendors/cypress/MTB/psoc6/psoc64tfm/COMPONENT_TFM_S_FW/tfm_s_unsigned.hex
+*.bin
+*.pyc
+
+RemoteSystemsTempFiles/*
+
+# Ignore top-level build dir
+/build*/
+
+# Ignore certificate files
+*.pem
+*.crt
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Plus alpha
+**/nbproject/Makefile-*
+**/nbproject/Package-*
+**/nbproject/private/*
+
+**/.generated_files/*
+**/dist/*
+
+# --------------------------------------------------
+!**/pic32mz_w1_curiosity.X.production.hex
+
+# コード署名証明書と鍵はリポジトリに置いておく
+!**/codesigner_cert_utility/ecdsasigner.crt
