@@ -34,5 +34,6 @@
   "editor.formatOnSaveMode": "modifications",
   "editor.rulers": [150],
   "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 ,AlignConsecutiveMacros: true, IndentPPDirectives: AfterHash, SortIncludes: false}",
-  "C_Cpp.errorSquiggles": "enabled"
+  "C_Cpp.errorSquiggles": "enabled",
+  "editor.renderWhitespace": "trailing"
 }

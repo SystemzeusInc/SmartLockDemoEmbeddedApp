@@ -65,28 +65,10 @@ $ git clone https://github.com/SystemzeusInc/SmartLockDemoEmbeddedApp
 
 ## セットアップ方法
 
-### ハードウェア
-
-以下配線図を参照してセットアップしてください。
-
-![配線図](/doc/image/wiring_diagram.png)
-*配線図*
-
-### ソフトウェア
-
-以下コマンドを実行してamazon-freertosをクローンします。
-
-```bash
-$ cd SmartLockDemoEmbeddedApp
-SmartLockDemoEmbeddedApp$ git clone https://github.com/MicrochipTech/amazon-freertos.git
-SmartLockDemoEmbeddedApp/amazon-freertos$ git checkout mchpdev_20210700
-SmartLockDemoEmbeddedApp/amazon-freertos$ git submodule update --init --recursive
-```
-
-詳しくは TODO:zennのurl を参照してください。
+セットアップ方法は[SETUP.md](/SETUP.md)を参照してください
 
 <!-- ## 使用方法 -->
 
 ## License
 
-This projects is licensed under the MIT License, see the LICENSE.txt file for details.
+This projects is licensed under the MIT License, see the [LICENSE.txt](/LICENSE.txt) file for details.
