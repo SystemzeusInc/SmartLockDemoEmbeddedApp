@@ -683,7 +683,3 @@ srec_cat version 1.65.0 [git hash 5844fa801c]
     0 883 [Tmr Svc] [DEBUG]Start APPLICATION_ENTRY_RunWakeupTask
     ...
     ```
-
-## 7. おわりに
-
-ここではスマートロックデモ開発におけるデバイスの環境構築について説明しました。
