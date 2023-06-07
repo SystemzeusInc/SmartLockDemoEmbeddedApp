@@ -110,13 +110,15 @@ extern "C"
     uint16_t usGetAverageAngle(uint8_t uxN, uint8_t *puxElapsedTime);
 
     /**
-     * @brief 最短角度で指定角度(絶対角度)に回転
+     * @brief 指定角度(絶対角度)に回転
+     *
+     * @note 0° | 360°をまたぐような動きは考慮していない
      *
      * @param [in] usDestAngle 指定角度
      *
      * @return bool 成否
      */
-    bool bRotateToAngleByShortest(uint16_t usDestAngle);
+    bool bRotateToAngle(uint16_t usDestAngle);
 
     /**
      * @brief 指定角度分だけ回転
@@ -126,7 +128,7 @@ extern "C"
      *
      * @return bool 成否
      */
-    bool bRotateAtAngle(int16_t sDeltaAngle, uint32_t ulTimeout);
+    bool bRotateAtAngleByDelta(int16_t sDeltaAngle, uint32_t ulTimeout);
 
     // --------------------------------------------------
     // インライン関数

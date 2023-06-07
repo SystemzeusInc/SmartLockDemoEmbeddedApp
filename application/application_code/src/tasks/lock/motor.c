@@ -262,7 +262,7 @@ uint16_t usGetAverageAngle(uint8_t uxN, uint8_t *puxElapsedTime)
 #endif
 }
 
-bool bRotateToAngleByShortest(const uint16_t usDestAngle)
+bool bRotateToAngle(const uint16_t usDestAngle)
 {
     if (usDestAngle > 360)
     {
@@ -272,36 +272,16 @@ bool bRotateToAngleByShortest(const uint16_t usDestAngle)
     // 現在角度確認
     uint16_t usAngle = usGetAverageAngle(ANGLE_AVERAGE_NUM, NULL);
 
-    // 目標角度との差分(CW,CCW両方)
-    int16_t sD1 = (int16_t)(usDestAngle - usAngle);
-    int16_t sD2 = 0;
-    if (sD1 > 0)
-    {
-        sD2 = sD1 - 360;
-    }
-    else
-    {
-        sD2 = 360 + sD1;
-    }
-
-    // CW,CCWどちら回りの方が短いか判定
     int16_t sDeltaAngle = 0;
-    if (abs(sD1) < abs(sD2))
-    {
-        sDeltaAngle = sD1;
-    }
-    else
-    {
-        sDeltaAngle = sD2;
-    }
+    sDeltaAngle = (int16_t)(usDestAngle - usAngle);
 
     // 回転
-    bRotateAtAngle(sDeltaAngle, MOTOR_OUTPUT_TIMEOUT);
+    bRotateAtAngleByDelta(sDeltaAngle, MOTOR_OUTPUT_TIMEOUT);
 
     return true;
 }
 
-bool bRotateAtAngle(int16_t sDeltaAngle, uint32_t ulTimeout)
+bool bRotateAtAngleByDelta(int16_t sDeltaAngle, uint32_t ulTimeout)
 {
     bool bResult = false;
     uint32_t ulTotalElapsedTime = 0; // 経過時間
