@@ -252,12 +252,12 @@ static void prvLockTask(void *pvParameters)
             // 施錠状態確認後、ずれていた場合は位置を調整
             if (prvGetLockStateDoor() == LOCK_STATE_LOCKED)
             {
-                bRotateToAngleByShortest(ANGLE_TO_LOCK);
+                bRotateToAngle(ANGLE_TO_LOCK);
                 vLEDOn(RED);
             }
             else
             {
-                bRotateToAngleByShortest(ANGLE_TO_UNLOCK);
+                bRotateToAngle(ANGLE_TO_UNLOCK);
             }
 
             gxTaskData.eState = LOCK_TASK_STATE_TASK;
@@ -409,12 +409,12 @@ LockTaskResult_t prvLockTaskOp(LockTaskQueueData_t *pxData, uint32_t ulTimeout)
 
 static void prvUnlock(void)
 {
-    bRotateToAngleByShortest(ANGLE_TO_UNLOCK);
+    bRotateToAngle(ANGLE_TO_UNLOCK);
 }
 
 static void prvLock(void)
 {
-    bRotateToAngleByShortest(ANGLE_TO_LOCK);
+    bRotateToAngle(ANGLE_TO_LOCK);
 }
 
 LockState_t prvGetLockStateDoor()
