@@ -683,3 +683,26 @@ srec_cat version 1.65.0 [git hash 5844fa801c]
     0 883 [Tmr Svc] [DEBUG]Start APPLICATION_ENTRY_RunWakeupTask
     ...
     ```
+
+## トラブルシューティング
+
+### ビルドが失敗する場合
+
+-   事象
+    ビルド実行時に以下のようなエラーが表示されビルドが成功しない。
+    例えば、MPLAB X IDEを開いたままgitでブランチを移動した場合に発生することがある。
+    ```bash
+    make[2]: Leaving directory 'C:/***/projects/microchip/wfi32_iot_pic32mzw1_ecc/mplab/aws_demos/firmware/aws_demos.X'
+    make[1]: *** [nbproject/Makefile-aws_demos.mk:108: .build-conf] Error 2
+    make[1]: Leaving directory 'C:/***/projects/microchip/wfi32_iot_pic32mzw1_ecc/mplab/aws_demos/firmware/aws_demos.X'
+    make: *** [nbproject/Makefile-impl.mk:39: .build-impl] Error 2
+    ```
+
+-   解決方法
+    ビルド時に使用されるMakefileを再生成する。
+    
+    1.  MPLAB X IDEは閉じる
+    2.  エラーとなっているプロジェクトのフォルダを特定する。上記の例だと下記のフォルダのエラー箇所になる   　　　　　_\\projects\\microchip\\wfi32_iot_pic32mzw1_ecc\\mplab\\aws_demos\\firmware\\aws_demos.X\\nbproject\\_
+    4.  このフォルダでconfigurations.xml, project.xml**以外**のファイルとフォルダを消す
+    5.  MPLAB X IDEを再度開き、しばらく待つ(上記で消したファイルが再度生成されるのを待つ)
+    6.  再度ビルドを実施する
